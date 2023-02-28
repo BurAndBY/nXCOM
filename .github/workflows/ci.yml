@@ -45,7 +45,8 @@ jobs:
           sudo apt-get update
           sudo apt-get -yq --no-install-suggests --no-install-recommends install ccache ${{ matrix.packages }}
           sudo apt-get -yq --no-install-suggests --no-install-recommends install libsdl1.2-dev libsdl-mixer1.2-dev libsdl-image1.2-dev libsdl-gfx1.2-dev libyaml-cpp-dev
-
+          sudo apt-get switch-dev
+          sudo apt-get .switch-dev
       - name: Install packages (Windows)
         if: runner.os == 'Windows' && matrix.packages
         run: |
